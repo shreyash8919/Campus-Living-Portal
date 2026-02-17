@@ -1,0 +1,275 @@
+/* ============ HERO ============ */
+.landing-page {
+    padding-top: 0;
+}
+
+.hero {
+    position: relative;
+    min-height: 60vh;
+    display: flex;
+    align-items: center;
+    background: #f0f2f5;
+    background-image: linear-gradient(to bottom, #fff, #f0f2f5);
+    border-bottom: 4px solid var(--primary);
+}
+
+.hero-bg-effects {
+    display: none;
+}
+
+.hero-content {
+    width: 100%;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 5px 15px;
+    background: var(--primary);
+    color: white;
+    font-weight: bold;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+    border-radius: 2px;
+}
+
+.hero-title {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: var(--primary);
+    /* Dark Blue */
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', serif;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.hero-description {
+    max-width: 800px;
+    margin: 0 auto 30px;
+    color: #555;
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+.hero-actions {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.hero-stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    padding-top: 30px;
+    border-top: 1px solid #ccc;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-stat-number {
+    font-family: Arial, sans-serif;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.hero-stat-label {
+    font-size: 0.8rem;
+    color: #555;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+/* ============ SECTIONS ============ */
+.section-hostels,
+.section-view {
+    padding: 50px 0;
+    border-bottom: 1px solid #eee;
+}
+
+
+
+/* ============ FOOTER ============ */
+.landing-footer {
+    background: #1b3446;
+    /* Dark Blue */
+    color: white;
+    padding: 40px 0 20px;
+    border-top: 4px solid #002266;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+.footer-col h4 {
+    font-size: 1.1rem;
+    color: #ffc107;
+    /* Gold/Yellow for headings on dark bg */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    font-family: Arial, sans-serif;
+}
+
+.footer-col p,
+.footer-col a {
+    display: block;
+    font-size: 0.9rem;
+    color: #eee;
+    margin-bottom: 8px;
+    text-decoration: none;
+}
+
+.footer-col a:hover {
+    color: #fff;
+    text-decoration: underline;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.footer-bottom p {
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+/* ============ RESPONSIVE ============ */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-stats {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .quick-links-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hostel-cards-container {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+
+/* Wrapper for Slider and Notice Board */
+.slider-wrapper-flex {
+    display: flex;
+    justify-content: flex-start;
+    /* Default alignment */
+    align-items: flex-start;
+    /* Align top */
+    position: relative;
+    /* 
+       The slider has a negative margin-left of -105px and width 60%.
+       We need to ensure the flex container handles this gracefully.
+       Because the slider is 'relative', its layout space in flex might be weird with negative margins.
+       However, we want the notice board to sit in the 'white space' on the right.
+       
+       If slider is 60%, remaining is 40%.
+       The slider has margin-top: 70px.
+       So we need to push the notice board down by 70px to match.
+    */
+}
+
+.notice-board-side {
+    /* 
+       Fill the remaining space. 
+       We use flex-grow or fixed percentage. 
+       Slider is 60%, so let's give this ~35% to be safe with margins.
+    */
+    flex: 1;
+    margin-top: 70px;
+    /* Match slider's margin-top */
+    margin-left: 80px;
+    /* Gap between slider and notices */
+    max-width: 400px;
+    /* Don't get too wide on huge screens */
+    min-width: 280px;
+    /* Minimum width */
+}
+
+.about-charter-flex {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0;
+    /* Keep 0 because about-us-container-shift uses margins */
+}
+
+.charter-side {
+    flex: 1;
+    margin-left: 80px;
+    /* Match notice-board-side margin-left */
+    max-width: 400px;
+    /* Match notice-board-side max-width */
+    min-width: 280px;
+}
+
+@media (max-width: 991px) {
+    .about-charter-flex {
+        flex-direction: column;
+    }
+
+    .charter-side {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+    }
+}
+
+/* Responsive: Stack on mobile/tablet */
+@media (max-width: 991px) {
+    .slider-wrapper-flex {
+        flex-direction: column;
+    }
+
+    .notice-board-side {
+        width: 100%;
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 30px;
+        /* Space between slider and notices on mobile */
+    }
+
+    /* On mobile, the slider styling (which we can't change) might still have -105px margin or width 100%.
+       InstitutionalSlider.css has a media query for max-width: 768px setting width: 100%.
+       But between 768px and 991px, it might look odd if we don't adjust.
+       However, the user said "Do NOT resize the slider."
+       So we just ensure the Notice Board flows below it.
+    */
+}

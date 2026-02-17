@@ -1,0 +1,114 @@
+.about-page {
+    padding: 40px 0;
+    min-height: 100vh;
+    background-color: #fff;
+    font-family: Arial, sans-serif;
+}
+
+.about-header-main {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.about-header-main h1 {
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.hostel-section-wrapper,
+.admission-section-wrapper {
+    margin-bottom: 40px;
+}
+
+.hostel-grey-header {
+    background-color: #eeeeee;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.hostel-grey-header h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.table-container {
+    margin-bottom: 20px;
+    overflow-x: auto;
+}
+
+.about-custom-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.about-custom-table th,
+.about-custom-table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.about-custom-table th {
+    background-color: #ffffff;
+    font-weight: bold;
+}
+
+.total-row-custom td {
+    font-weight: bold;
+}
+
+.facilities-section-custom {
+    margin-bottom: 20px;
+}
+
+.facilities-section-custom h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: normal;
+}
+
+.numbered-list-custom {
+    padding-left: 20px;
+}
+
+.numbered-list-custom li {
+    margin-bottom: 8px;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+}
+
+.rector-section-custom h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 5px;
+    font-weight: normal;
+}
+
+.rector-section-custom p {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.admission-content-custom p {
+    font-size: 1.1rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .about-header-main h1 {
+        font-size: 2rem;
+    }
+
+    .hostel-grey-header h2 {
+        font-size: 1.2rem;
+    }
+}

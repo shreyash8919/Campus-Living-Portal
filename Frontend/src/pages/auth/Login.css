@@ -1,0 +1,328 @@
+/* Government Login Theme */
+.login-page {
+    padding-top: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    background: #f0f2f5;
+}
+
+/* Remove effects */
+.login-bg-effects,
+.login-orb,
+.orb-a,
+.orb-b {
+    display: none;
+}
+
+.login-container {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+}
+
+/* Select Type */
+.login-select {
+    width: 100%;
+    max-width: 800px;
+    text-align: center;
+    background: transparent;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.login-select-header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-family: 'Times New Roman', serif;
+    color: var(--primary);
+}
+
+.login-select-header p {
+    color: #555;
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+.login-select-cards {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.login-select-card {
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+    position: relative;
+    width: 300px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.login-select-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 24px rgba(11, 61, 145, 0.15);
+    border-color: var(--primary);
+}
+
+.login-card-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+    margin: 0 auto 20px;
+    border: 1px solid #eee;
+    background: #f8f9fa;
+    color: var(--primary);
+}
+
+.login-select-card h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.login-select-card p {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.6;
+}
+
+/* VERTICAL FORM CARD STYLING */
+.login-form-wrap {
+    width: 100%;
+    max-width: 480px;
+    background: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 2px;
+    padding: 40px 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    border-top: 4px solid var(--primary);
+    display: flex;
+    flex-direction: column;
+}
+
+.login-back {
+    background: none;
+    color: #555;
+    font-size: 0.9rem;
+    padding: 0;
+    cursor: pointer;
+    font-weight: 600;
+    text-decoration: underline;
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    transition: color 0.2s;
+    align-self: flex-start;
+}
+
+.login-back:hover {
+    color: var(--primary);
+}
+
+.login-form-header {
+    text-align: center;
+    margin-bottom: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    background: #fff;
+    color: var(--primary);
+    border: 1px solid #ccc;
+    /* Square box */
+    border-radius: 0;
+}
+
+.login-form-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-family: 'Times New Roman', serif;
+    font-weight: bold;
+}
+
+.login-form-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+.login-divider {
+    border: 0;
+    border-top: 1px solid #eee;
+    margin: 10px 0 25px 0;
+    width: 100%;
+}
+
+/* Gender Select */
+.gender-select {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+}
+
+.gender-btn {
+    padding: 15px;
+    background: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    color: #333;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.gender-btn:hover {
+    background: #fff;
+    border-color: var(--primary);
+    color: var(--primary);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+/* Steps */
+.login-steps {
+    display: flex;
+    border: 1px solid #ccc;
+    margin-bottom: 25px;
+}
+
+.login-step {
+    flex: 1;
+    padding: 10px 5px;
+    text-align: center;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #777;
+    background: #fff;
+    border-right: 1px solid #ccc;
+}
+
+.login-step:last-child {
+    border-right: none;
+}
+
+.login-step.active {
+    color: white;
+    background: var(--primary);
+}
+
+.login-form-fields {
+    animation: fadeIn 0.3s ease;
+}
+
+/* Form Fields */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #000;
+    font-size: 1rem;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    font-size: 1rem;
+    border: 1px solid #999;
+    /* Stronger border */
+    border-radius: 0;
+    background: #fff;
+    color: #333;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: var(--primary);
+}
+
+.form-info-box {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 15px;
+    background: #e3f2fd;
+    border: 1px solid #bbdefb;
+    border-radius: 0;
+    font-size: 0.9rem;
+    color: #0d47a1;
+    margin-bottom: 25px;
+}
+
+.login-submit {
+    width: 100%;
+    padding: 15px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: #f0f0f0;
+    /* Light button for student continue usually, or primary? */
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+    transition: all 0.2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-submit.btn-accent {
+    background: #f0f0f0;
+    color: #333;
+    border: 1px solid #999;
+}
+
+.login-submit.btn-primary {
+    background: var(--primary);
+    color: #fff;
+    border: none;
+}
+
+.login-submit:hover {
+    opacity: 0.9;
+    background: #e0e0e0;
+}
+
+.login-submit.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+@media (max-width: 480px) {
+    .login-form-wrap {
+        padding: 30px 20px;
+    }
+}

@@ -1,0 +1,343 @@
+/* Government Polytechnic Theme - Traditional Style */
+
+:root {
+  /* Government Colors */
+  --primary: #0b3d91;
+  /* Official Government Dark Blue */
+  --primary-dark: #002266;
+  --primary-light: #1a4fa3;
+
+  --secondary: #d32f2f;
+  /* Alert/Important Red */
+
+  /* Backgrounds */
+  --bg-primary: #ffffff;
+  --bg-secondary: #f5f5f5;
+  --bg-card: #ffffff;
+  --bg-input: #ffffff;
+  --bg-header: #ffffff;
+  --bg-navbar: #0b3d91;
+
+  /* Text */
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --text-on-primary: #ffffff;
+
+  /* Borders */
+  --border-color: #cccccc;
+  --border-light: #e0e0e0;
+
+  /* Shadows - Minimal */
+  --shadow-sm: none;
+  --shadow-md: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-glow: none;
+
+  /* Spacing & Radius */
+  --radius-sm: 0px;
+  /* Rectangular corners */
+  --radius-md: 2px;
+  --radius-lg: 4px;
+
+  /* Transitions - minimize animations */
+  --transition-fast: 0s;
+  --transition-normal: 0.1s ease;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  /* System fonts */
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'Times New Roman', serif;
+  /* Formal headings */
+  font-weight: bold;
+  color: var(--primary);
+  margin-bottom: 0.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-family: Arial, sans-serif;
+}
+
+input,
+textarea,
+select {
+  font-family: Arial, sans-serif;
+  border: 1px solid #999;
+  background: var(--bg-input);
+  color: var(--text-primary);
+  border-radius: 0;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid var(--primary);
+  border-color: var(--primary);
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  /* Default none, but pages might need bullets */
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.section-title {
+  font-size: 24px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.section-subtitle {
+  color: var(--text-secondary);
+  font-size: 16px;
+  margin-bottom: 20px;
+}
+
+/* Buttons - Rectangular & Official */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 0;
+  /* Rectangular */
+  font-weight: bold;
+  font-size: 14px;
+  text-transform: uppercase;
+  border: 1px solid transparent;
+  width: auto;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: var(--primary-dark);
+  text-decoration: none;
+}
+
+.btn-accent,
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+  border: 1px solid #999;
+}
+
+.btn-accent:hover,
+.btn-secondary:hover {
+  background: #e0e0e0;
+  text-decoration: none;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-outline:hover {
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-danger {
+  background: #d32f2f;
+  color: white;
+}
+
+.btn-danger:hover {
+  background: #b71c1c;
+}
+
+/* Cards */
+.card {
+  background: var(--bg-card);
+  border: 1px solid #ccc;
+  border-radius: 0;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: none;
+}
+
+.card:hover {
+  border-color: var(--primary);
+}
+
+.glass-card {
+  /* Remove glass effect, fallback to standard card */
+  background: var(--bg-card);
+  border: 1px solid #ccc;
+  padding: 20px;
+}
+
+/* Badges */
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 0;
+  font-size: 11px;
+  font-weight: bold;
+  color: white;
+  background: var(--primary);
+}
+
+.badge-new {
+  background: #007bff;
+}
+
+.badge-important {
+  background: #dc3545;
+}
+
+.badge-warning {
+  background: #ffc107;
+  color: black;
+}
+
+.badge-success {
+  background: #28a745;
+}
+
+/* Status Tags */
+.status-tag {
+  display: inline-block;
+  padding: 2px 6px;
+  font-size: 12px;
+  border: 1px solid #ccc;
+}
+
+.status-pending {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.status-progress {
+  background: #e2e3e5;
+  color: #383d41;
+}
+
+.status-resolved {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-rejected {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+/* Forms */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+/* Dashboard layout */
+.dashboard-layout {
+  display: flex;
+  min-height: 100vh;
+  padding-top: 0;
+  flex-direction: row;
+  /* Desktop default */
+}
+
+.dashboard-content {
+  flex: 1;
+  padding: 20px;
+  background: #fff;
+  width: 100%;
+  /* Ensure it takes width */
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard-layout {
+    flex-direction: column;
+  }
+
+  .section-title {
+    font-size: 20px;
+  }
+}

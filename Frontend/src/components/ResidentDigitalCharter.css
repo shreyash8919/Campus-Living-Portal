@@ -1,0 +1,139 @@
+.digital-charter-section {
+    margin-top: 8px;
+    width: 150%;
+}
+
+.charter-header {
+    margin-bottom: 80px;
+    border-left: 4px solid #00838f;
+    background-color: #effdfe;
+    /* Support Navy Blue */
+    padding-left: 15px;
+}
+
+.charter-header h3 {
+    margin: 0;
+    font-size: 1.4rem;
+    color: #002266;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.charter-header p {
+    margin: 15px 0 0;
+    font-size: 0.9rem;
+    color: #555;
+    font-style: italic;
+}
+
+.charter-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 80px;
+}
+
+.charter-card {
+    background: linear-gradient(135deg, rgba(255, 253, 253, 0.9), rgba(240, 244, 248, 0.7));
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 16px;
+    padding: 24px 20px;
+    transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 8px 32px rgba(31, 38, 135, 0.1);
+    position: relative;
+    overflow: hidden;
+    /* Soft floating motion */
+    animation: floating 5s ease-in-out infinite;
+}
+
+.charter-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 255, 255, 0.4),
+            transparent);
+    transition: 0.5s;
+}
+
+.charter-card:hover::before {
+    left: 100%;
+}
+
+.charter-card:nth-child(even) {
+    animation-delay: 2.5s;
+}
+
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.charter-card:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 20px 40px rgba(0, 34, 102, 0.2);
+    border-color: rgba(0, 34, 102, 0.3);
+    background: #ffffff;
+    animation: none;
+}
+
+.card-icon-wrapper {
+    width: 45px;
+    height: 45px;
+    background: #f0f4f8;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 12px;
+    color: #002266;
+    transition: all 0.3s ease;
+}
+
+.charter-card:hover .card-icon-wrapper {
+    background: #002266;
+    color: #fff;
+    transform: rotate(10deg);
+}
+
+.charter-icon {
+    font-size: 1.4rem;
+}
+
+.charter-card h4 {
+    margin: 0 0 10px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+}
+
+.charter-card p {
+    margin: 0;
+    font-size: 0.82rem;
+    color: #666;
+    line-height: 1.4;
+}
+
+/* Mobile Responsivity */
+@media (max-width: 576px) {
+    .charter-grid {
+        grid-template-columns: 1fr;
+    }
+}
