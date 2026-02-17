@@ -1,0 +1,64 @@
+/* ============ SECTIONS ============ */
+.section-hostels,
+.section-view,
+.section-about-us {
+    padding: 20px 0 50px;
+    /* Reduced top padding as the description is related to above */
+    border-bottom: 1px solid #eee;
+}
+
+/* ============ ABOUT US SECTION ============ */
+.about-us-container-shift {
+    margin-left: -105px;
+    width: calc(102% + -489px);
+    position: relative;
+    /* Ensure proper stacking if needed */
+}
+
+@media (max-width: 991px) {
+    .about-us-container-shift {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+.about-header-bar {
+    background-color: #00838f;
+    /* Teal color matching the description */
+    background: linear-gradient(135deg, #00838b 0%, #00838b 100%);
+    /* Similar to notice board but slightly different or same family */
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    border-radius: 4px 4px 0 0;
+    /* Slight radius */
+    margin-bottom: 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.about-header-bar h2 {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-transform: capitalize;
+    color: white;
+    /* "About Us" */
+}
+
+.about-content-box {
+    background: #fff;
+    padding: 25px;
+    border: 1px solid #ddd;
+    border-top: none;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    border-radius: 0 0 4px 4px;
+    color: #444;
+    font-size: 1rem;
+    line-height: 1.8;
+    text-align: justify;
+}
+
+.about-content-box p {
+    margin: 0;
+    padding: 10px;
+}
