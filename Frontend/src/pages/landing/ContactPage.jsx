@@ -1,10 +1,27 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { FiMail, FiPhone, FiMapPin, FiSend, FiCheck } from 'react-icons/fi';
 import './Contact.css';
 
 export default function ContactPage() {
     const [formData, setFormData] = useState({ name: '', email: '', subject: '', message: '' });
     const [submitted, setSubmitted] = useState(false);
+    const [location, setLocation] = useState({ lat: 18.910, lng: 73.951 }); // Default to nearby location
+
+    useEffect(() => {
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(
+                (position) => {
+                    setLocation({
+                        lat: position.coords.latitude,
+                        lng: position.coords.longitude
+                    });
+                },
+                (error) => {
+                    console.log("Using default location", error);
+                }
+            );
+        }
+    }, []);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -52,27 +69,66 @@ export default function ContactPage() {
                         </div>
 
                         {/* Map */}
-                        <div className="contact-map">
-                            <h3>📍 Location</h3>
-                            <div className="map-container">
+                        {/* Map - Dynamic Location */}
+                        <div className="location-info-card" style={{
+                            border: '1px solid #ddd',
+                            background: 'white',
+                            padding: '15px',
+                            borderRadius: '12px',
+                            marginTop: '20px'
+                        }}>
+                            <div style={{ padding: '0 0 15px 0', borderBottom: '1px solid #ddd', marginBottom: '15px' }}>
+                                <h2 style={{ margin: 0, color: '#003366', fontSize: '1.2rem', display: 'flex', alignItems: 'center', gap: '8px', fontWeight: 'bold' }}>
+                                    <FiMapPin className="text-red-500" style={{ color: '#dc3545' }} /> Location
+                                </h2>
+                            </div>
+
+                            <div style={{
+                                width: '100%',
+                                height: '250px',
+                                background: '#eef',
+                                border: '1px solid #ddd',
+                                marginBottom: '15px',
+                                position: 'relative'
+                            }}>
                                 <iframe
-                                    title="Government Polytechnic Awasari Location"
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3780.0!2d73.9!3d18.8!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2sGovernment+Polytechnic+Awasari!5e0!3m2!1sen!2sin!4v1234567890"
+                                    title="User Location"
                                     width="100%"
-                                    height="250"
-                                    style={{ border: 0, borderRadius: '12px' }}
-                                    allowFullScreen=""
-                                    loading="lazy"
-                                    referrerPolicy="no-referrer-when-downgrade"
+                                    height="100%"
+                                    frameBorder="0"
+                                    style={{ border: 0 }}
+                                    src={`https://maps.google.com/maps?q=${location.lat},${location.lng}&z=15&output=embed`}
+                                    allowFullScreen
                                 ></iframe>
                             </div>
+
                             <a
-                                href="https://maps.google.com/?q=Government+Polytechnic+Awasari+Kh"
+                                href={`https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`}
                                 target="_blank"
                                 rel="noopener noreferrer"
-                                className="btn btn-outline btn-sm map-link"
+                                className="btn"
+                                style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'center',
+                                    gap: '10px',
+                                    width: '100%',
+                                    padding: '12px 20px',
+                                    background: 'white',
+                                    color: '#003366',
+                                    fontWeight: '700',
+                                    border: '1px solid #003366',
+                                    textDecoration: 'none',
+                                    textTransform: 'uppercase',
+                                    fontSize: '0.9rem',
+                                    transition: 'background 0.2s',
+                                    cursor: 'pointer',
+                                    borderRadius: '6px'
+                                }}
+                                onMouseEnter={(e) => { e.currentTarget.style.background = '#f0f4f8'; }}
+                                onMouseLeave={(e) => { e.currentTarget.style.background = 'white'; }}
                             >
-                                <FiMapPin /> Open in Google Maps
+                                <FiMapPin /> OPEN IN GOOGLE MAPS
                             </a>
                         </div>
                     </div>
@@ -139,6 +195,8 @@ export default function ContactPage() {
                         </form>
                     </div>
                 </div>
+
+
             </div>
         </div>
     );
