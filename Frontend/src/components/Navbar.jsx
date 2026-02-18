@@ -47,6 +47,10 @@ export default function Navbar({ isDashboard = false }) {
                             <span className="contact-label">Phone:</span>
                             <p>9970723236</p>
                         </div>
+                        <div className="contact-item">
+                            <span className="contact-label">MSBTE Code:</span>
+                            <p>1051</p>
+                        </div>
                     </div>
 
                     <button

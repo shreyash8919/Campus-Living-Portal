@@ -21,6 +21,10 @@ const StudentSchema = new mongoose.Schema({
     year: {
         type: Number,
         required: true
+    },
+    roomNumber: {
+        type: String,
+        default: 'N/A'
     }
 }, { timestamps: true });
 
